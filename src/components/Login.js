@@ -6,6 +6,7 @@ import {createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfil
 import background from "../assets/BingeBox_Background.png";
 import { addUser } from '../utils/userSlice';
 import { useDispatch } from 'react-redux';
+import userIcon from "../assets/user-icon.png"
 
 const Login = () => {
 
@@ -43,7 +44,7 @@ const Login = () => {
                 const user = userCredential.user;
                 updateProfile(user, {
                     displayName: name.current.value,
-                    photoURL: "https://avatars.githubusercontent.com/u/89463033?s=96&v=4"
+                    photoURL: userIcon
                     }).then(() => {
                         // Profile updated!
                         const {uid, email, displayName, photoURL} = auth.currentUser;
