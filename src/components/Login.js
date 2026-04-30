@@ -70,7 +70,6 @@ const Login = () => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorMessage);
                 if(errorMessage.includes("invalid-credential")){
                     setErrorMessage("Invalid Credentials! Please try again");
                 }
