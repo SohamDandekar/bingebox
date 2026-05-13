@@ -22,5 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# api keys
-keys.js
+# environment file for storing secrets like API keys
+.env
