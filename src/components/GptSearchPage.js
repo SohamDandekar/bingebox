@@ -5,7 +5,7 @@ import background from "../assets/BingeBox_Background.png";
 const GptSearchPage = () => {
   return (
     <div>
-      <div className='absolute -z-10'>
+      <div className='fixed -z-10'>
         <img src={background} alt="bg-image"/>
       </div>
       <GptSearchBar />

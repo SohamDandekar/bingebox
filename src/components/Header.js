@@ -6,7 +6,7 @@ import { useNavigate} from 'react-router-dom';
 import { auth } from '../utils/firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
-import { toggleShowGptSearch } from '../utils/gptSlice';
+import { clearMovieDetails, toggleShowGptSearch } from '../utils/gptSlice';
 import { SUPPORTED_LANGUAGES } from '../utils/constants';
 import { toggleLanguage } from '../utils/languageSlice';
 
@@ -47,6 +47,10 @@ const Header = () => {
     }, []);
 
   const handleGptSearchClick = () => {
+
+    if(!showGptSearch)
+      dispatch(clearMovieDetails());
+    
     dispatch(toggleShowGptSearch());
   }
 
