@@ -59,14 +59,14 @@ const Header = () => {
   }
   
   return (
-    <div className='absolute w-full bg-gradient-to-b from-black z-10 flex justify-between'>
-        <img src={logo} className='w-64 ml-10' alt="bingebox-logo"/>
-        {user && <div className='flex p-2 mt-9 mr-8'>
+    <div className='absolute w-full bg-gradient-to-b from-black z-10 flex justify-between flex-col md:flex-row -mt-8 md:-mt-4'>
+        <img src={logo} className='w-64 mx-auto md:ml-10' alt="bingebox-logo"/>
+        {user && <div className='flex p-2 md:mt-8 -mt-12 md:mr-8 mx-auto'>
           {showGptSearch && <select className='p-3 mx-4 mb-20 bg-slate-800 text-white' onChange={(e) => handleToggleLanguage(e)}>
             {SUPPORTED_LANGUAGES.map(lang => <option key={lang.identifier} value={lang.identifier}>{lang.data}</option>)}
           </select>}
           <button onClick={handleGptSearchClick} className='p-3 mx-6 mb-20 text-white rounded-lg bg-teal-500'>{showGptSearch ? "Home Page" : "GPT Search"}</button>
-          <img className="w-12 h-12" src={user?.photoURL || userIcon} alt="user-icon"/>
+          <img className="hidden md:block w-12 h-12" src={user?.photoURL || userIcon} alt="user-icon"/>
           <button onClick={handleSignOut} className='text-white bg-yellow-500 rounded-lg h-12 px-2 mx-2'>Sign Out</button>
         </div>}
     </div>
